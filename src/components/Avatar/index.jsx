@@ -1,5 +1,5 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Icon from "../../images/favicon.png"
 
@@ -20,11 +20,11 @@ function Avatar() {
 
   return (
     <>
-      <img src={Icon} alt="Logo" />
+      <img src={Icon} alt="Logo" style={{ display: "none" }} />
       <Img
         fluid={avatarImage.childImageSharp.fluid}
         style={{
-          maxWidth: 220
+          maxWidth: 220,
         }}
       />
     </>
