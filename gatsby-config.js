@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Bruno Macedo`,
-    position: 'Front-end developer',
+    position: `Front-end developer`,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae qui in nobis reiciendis`,
     author: `@brunomacedo`,
   },

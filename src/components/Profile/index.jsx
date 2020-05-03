@@ -21,9 +21,7 @@ function Profile() {
     <aside className="profile-wrapper">
       <h1>{site.siteMetadata.title}</h1>
       <h2>{site.siteMetadata.position}</h2>
-      <p>
-        {site.siteMetadata.description}
-      </p>
+      <p>{site.siteMetadata.description}</p>
     </aside>
   )
 }
