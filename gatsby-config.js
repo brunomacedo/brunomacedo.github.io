@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Bruno Macedo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    position: 'Front-end developer',
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae qui in nobis reiciendis`,
     author: `@brunomacedo`,
   },
   plugins: [
