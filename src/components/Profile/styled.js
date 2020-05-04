@@ -5,12 +5,15 @@ export const ProfileWrapper = styled.aside`
   color: #8899a6;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 1.5rem;
 `
 
 export const ProfileLink = styled(Link)`
   color: #8899a6;
   text-decoration: none;
   transition: color 0.5s;
+
   &:hover {
     color: #1fa1f2;
   }
@@ -30,5 +33,5 @@ export const ProfilePosition = styled.small`
 export const ProfileDescription = styled.p`
   font-size: 1rem;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.6;
 `

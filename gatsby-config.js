@@ -4,6 +4,16 @@ module.exports = {
     position: `Front-end developer`,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae qui in nobis reiciendis`,
     author: `@brunomacedo`,
+    socials: [
+      {
+        label: `Github`,
+        href: `https://github.com/brunomacedo`,
+      },
+      {
+        label: `Instagram`,
+        href: `https://instagram.com/brunomacedo._`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-styled-components`,

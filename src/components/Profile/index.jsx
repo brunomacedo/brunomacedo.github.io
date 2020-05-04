@@ -1,12 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+
 import Avatar from "../Avatar"
+import Socials from "../Socials"
 import * as S from "./styled"
 
 function Profile() {
   const {
     site: {
-      siteMetadata: { title, position, description },
+      siteMetadata: { title, position, description, socials },
     },
   } = useStaticQuery(
     graphql`
@@ -16,6 +18,10 @@ function Profile() {
             title
             position
             description
+            socials {
+              label
+              href
+            }
           }
         }
       }
@@ -32,6 +38,7 @@ function Profile() {
         </S.ProfileAuthor>
       </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
+      <Socials socials={socials} />
       <nav>
         <Link to="/" activeStyle={{ borderBottom: "2px solid red" }}>
           Home
