@@ -10,12 +10,18 @@ export const ProfileWrapper = styled.aside`
 `
 
 export const ProfileLink = styled(Link)`
-  color: #8899a6;
+  color: #3390e0;
   text-decoration: none;
   transition: color 0.5s;
+  padding: 0.5rem;
 
-  &:hover {
+  &:hover,
+  &:visited {
     color: #1fa1f2;
+  }
+
+  &.actived-page {
+    border-bottom: 2px solid #3390e0;
   }
 `
 

@@ -40,12 +40,12 @@ function Profile() {
       <S.ProfileDescription>{description}</S.ProfileDescription>
       <Socials socials={socials} />
       <nav>
-        <Link to="/" activeStyle={{ borderBottom: "2px solid red" }}>
+        <S.ProfileLink to="/" activeClassName="actived-page">
           Home
-        </Link>
-        <Link to="/about" activeStyle={{ borderBottom: "2px solid red" }}>
+        </S.ProfileLink>
+        <S.ProfileLink to="/about/" activeClassName="actived-page">
           About
-        </Link>
+        </S.ProfileLink>
       </nav>
     </S.ProfileWrapper>
   )
