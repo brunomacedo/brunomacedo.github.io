@@ -4,7 +4,7 @@ import * as S from "./styled"
 const PostItem = () => (
   <S.PostItemLink to="/page/">
     <S.PostItemWrapper>
-      <S.PostItemTag background="#47650b">Misc</S.PostItemTag>
+      <S.PostItemTag background="#3390e0">Misc</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>May, 16 of 2020</S.PostItemDate>
         <S.PostItemTitle>
