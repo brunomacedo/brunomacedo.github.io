@@ -39,7 +39,7 @@ function IndexPage() {
 
       {postList.map(({ node: { id, fields, timeToRead, frontmatter } }) => (
         <PostItem
-          key={id}
+          key={fields.slug}
           timeToRead={timeToRead}
           {...frontmatter}
           {...fields}
