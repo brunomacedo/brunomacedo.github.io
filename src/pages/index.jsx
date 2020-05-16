@@ -7,13 +7,16 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
+      <h1>Homepage</h1>
+      <PostItem
+        slug="/about/"
+        background="green"
+        category="Home"
+        date="30 May, 2020"
+        timeToRead="30 minutes"
+        title="Lnihil veritatis perferendis tempora quas"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempore modi facilis. Ullam in, minima nemo blanditiis itaque inventore totam"
+      />
     </Layout>
   )
 }
