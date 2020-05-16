@@ -1,16 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
+
 function Post({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   const { title } = frontmatter
 
   return (
-    <>
+    <Layout>
+      <SEO title={title} />
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-    </>
+    </Layout>
   )
 }
 
