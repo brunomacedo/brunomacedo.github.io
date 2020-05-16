@@ -45,7 +45,7 @@ export const PostItemDate = styled.time`
   opacity: 0.5;
 `
 
-export const PostItemTitle = styled.h1`
+export const PostItemTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
 `

@@ -1,22 +1,43 @@
 import React from "react"
+import PropTypes from "prop-types"
+
 import * as S from "./styled"
 
-const PostItem = () => (
-  <S.PostItemLink to="/page/">
+const PostItem = ({
+  slug,
+  background,
+  category,
+  date,
+  timeToRead,
+  title,
+  description,
+}) => (
+  <S.PostItemLink to={slug}>
     <S.PostItemWrapper>
-      <S.PostItemTag background="#3390e0">Misc</S.PostItemTag>
+      <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
-        <S.PostItemDate>May, 16 of 2020</S.PostItemDate>
-        <S.PostItemTitle>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </S.PostItemTitle>
-        <S.PostItemDescription>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum,
-          quidem optio maiores odio ab mollitia?
-        </S.PostItemDescription>
+        <S.PostItemDate>
+          {date} • {timeToRead}
+        </S.PostItemDate>
+        <S.PostItemTitle>{title}</S.PostItemTitle>
+        <S.PostItemDescription>{description}</S.PostItemDescription>
       </S.PostItemInfo>
     </S.PostItemWrapper>
   </S.PostItemLink>
 )
+
+PostItem.propTypes = {
+  slug: PropTypes.string.isRequired,
+  background: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  timeToRead: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+}
+
+PostItem.defaultProps = {
+  background: "#3390e0",
+}
 
 export default PostItem
