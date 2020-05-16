@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+
 import Icon from "../../images/favicon.png"
 import * as S from "./styled"
 
