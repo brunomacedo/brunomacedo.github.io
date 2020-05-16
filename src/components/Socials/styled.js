@@ -7,11 +7,10 @@ export const SocialList = styled.li`
 `
 
 export const SocialLink = styled.a`
-  font-size: 1rem;
   color: #fff;
   display: block;
-  padding: 10px;
-  width: 30px;
+  padding: 0.5rem;
+  width: 3.5rem;
 
   &:hover {
     opacity: 0.5;
