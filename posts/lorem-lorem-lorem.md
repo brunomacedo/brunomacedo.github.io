@@ -11,7 +11,13 @@ background: "blue"
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, ab amet deleniti repudiandae incidunt vitae obcaecati eaque in tempora doloribus commodi molestias ad fugiat corrupti. Fugit sit reprehenderit earum magni?
 
 ```javscript
-const gatsby = () => <></>
+function gatsby() {
+  return (
+    <>
+      <h1>Blalba</h1>
+    </>
+  )
+}
 ```
 
 ## Commodi molestias ad fugiat
