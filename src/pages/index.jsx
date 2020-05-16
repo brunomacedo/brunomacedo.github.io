@@ -17,6 +17,15 @@ function IndexPage() {
         title="Lnihil veritatis perferendis tempora quas"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempore modi facilis. Ullam in, minima nemo blanditiis itaque inventore totam"
       />
+      <PostItem
+        slug="/about/"
+        background="blue"
+        category="Posting"
+        date="30 May, 2020"
+        timeToRead="30 minutes"
+        title="Lnihil veritatis perferendis tempora quas"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempore modi facilis. Ullam in, minima nemo blanditiis itaque inventore totam"
+      />
     </Layout>
   )
 }
