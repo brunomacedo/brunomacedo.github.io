@@ -12,6 +12,10 @@ function IndexPage() {
         allMarkdownRemark {
           edges {
             node {
+              timeToRead
+              fields {
+                slug
+              }
               frontmatter {
                 background
                 category
@@ -19,7 +23,6 @@ function IndexPage() {
                 description
                 title
               }
-              timeToRead
             }
           }
         }
@@ -34,8 +37,13 @@ function IndexPage() {
       <SEO title="Home" />
       <h1>Homepage</h1>
 
-      {postList.map(({ node: { id, timeToRead, frontmatter } }) => (
-        <PostItem key={id} {...frontmatter} timeToRead={timeToRead} />
+      {postList.map(({ node: { id, fields, timeToRead, frontmatter } }) => (
+        <PostItem
+          key={id}
+          timeToRead={timeToRead}
+          {...frontmatter}
+          {...fields}
+        />
       ))}
     </Layout>
   )
