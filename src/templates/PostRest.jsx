@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
-function Post({ data }) {
+function PostRest({ data }) {
   const { restApiPosts } = data
   const { title, body } = restApiPosts
   return (
@@ -17,8 +17,8 @@ function Post({ data }) {
 }
 
 export const query = graphql`
-  query Post($slug: Int!) {
-    restApiPosts(endpointId: { eq: $slug }) {
+  query PostRest($slugRest: Int!) {
+    restApiPosts(endpointId: { eq: $slugRest }) {
       title
       body
       endpointId
@@ -26,4 +26,4 @@ export const query = graphql`
   }
 `
 
-export default Post
+export default PostRest
