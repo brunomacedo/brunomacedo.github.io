@@ -2,7 +2,7 @@
 date: 2020-05-16 05:54:23
 title: Lorem ipsum dolor sit amet, consectetur 2
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, ab amet deleniti repudiandae incidunt vitae obcaecati eaque in tempora doloribus commodi molestias ad fugiat corrupti. Fugit sit reprehenderit earum magni?
-category: Misc
+category: JSX
 background: "blue"
 ---
 
@@ -10,14 +10,19 @@ background: "blue"
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, ab amet deleniti repudiandae incidunt vitae obcaecati eaque in tempora doloribus commodi molestias ad fugiat corrupti. Fugit sit reprehenderit earum magni?
 
-```javscript
-function gatsby() {
-  return (
-    <>
-      <h1>Blalba</h1>
-    </>
-  )
-}
+```jsx
+<Layout>
+  <SEO />
+  <h1>Homepage</h1>
+  {postList.map(({ node: { id, fields, timeToRead, frontmatter } }) => (
+    <PostItem
+      key={fields.slug}
+      timeToRead={timeToRead}
+      {...frontmatter}
+      {...fields}
+    />
+  ))}
+</Layout>
 ```
 
 ## Commodi molestias ad fugiat
