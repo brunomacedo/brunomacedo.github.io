@@ -1,22 +1,45 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostItem from "../components/PostItem"
 
 function AboutPage() {
+  const { allRestApiPosts } = useStaticQuery(
+    graphql`
+      query {
+        allRestApiPosts {
+          edges {
+            node {
+              endpointId
+              title
+              body
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const postList = allRestApiPosts.edges
+
   return (
     <Layout>
       <SEO title="About" />
       <h1>About Page</h1>
-      <PostItem
-        slug="/"
-        background="purple"
-        category="About"
-        date="30 May, 2020"
-        timeToRead="30 minutes"
-        title="Lnihil veritatis perferendis tempora quas"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempore modi facilis. Ullam in, minima nemo blanditiis itaque inventore totam"
-      />
+      {postList.map(({ node: { title, endpointId, body } }) => (
+        <PostItem
+          key={endpointId}
+          slug={endpointId}
+          background="purple"
+          category="About"
+          date="30 May, 2020"
+          timeToRead="30 minutes"
+          title={title}
+          description={body}
+        />
+      ))}
     </Layout>
   )
 }

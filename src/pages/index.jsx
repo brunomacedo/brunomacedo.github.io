@@ -36,7 +36,6 @@ function IndexPage() {
     <Layout>
       <SEO />
       <h1>Homepage</h1>
-
       {postList.map(({ node: { id, fields, timeToRead, frontmatter } }) => (
         <PostItem
           key={fields.slug}

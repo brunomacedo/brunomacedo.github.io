@@ -52,6 +52,15 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
+    {
+      resolve: "gatsby-source-rest-api",
+      options: {
+        endpoints: [
+          "https://jsonplaceholder.typicode.com/posts",
+          "https://jsonplaceholder.typicode.com/users",
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
