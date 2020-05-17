@@ -34,7 +34,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
       <h1>Homepage</h1>
 
       {postList.map(({ node: { id, fields, timeToRead, frontmatter } }) => (
