@@ -12,7 +12,7 @@ const PostItem = ({
   title,
   description,
 }) => (
-  <S.PostItemLink to={slug}>
+  <S.PostItemLink to={`${slug}`}>
     <S.PostItemWrapper>
       <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
@@ -28,16 +28,19 @@ const PostItem = ({
 
 PostItem.propTypes = {
   slug: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  category: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  timeToRead: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  background: PropTypes.string,
+  category: PropTypes.string,
+  date: PropTypes.string,
+  timeToRead: PropTypes.number,
 }
 
 PostItem.defaultProps = {
   background: "#3390e0",
+  category: "Empty",
+  date: `${new Date()}`,
+  timeToRead: 0,
 }
 
 export default PostItem
