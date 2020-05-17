@@ -9,7 +9,7 @@ function AboutPage() {
   const { allRestApiPosts } = useStaticQuery(
     graphql`
       query {
-        allRestApiPosts {
+        allRestApiPosts(limit: 5) {
           edges {
             node {
               endpointId
@@ -30,12 +30,8 @@ function AboutPage() {
       <h1>About Page</h1>
       {postList.map(({ node: { title, endpointId, body } }) => (
         <PostItem
-          key={endpointId}
-          slug={endpointId}
-          background="purple"
-          category="About"
-          date="30 May, 2020"
-          timeToRead="30 minutes"
+          key={`${endpointId}`}
+          slug={`${endpointId}`}
           title={title}
           description={body}
         />
