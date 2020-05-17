@@ -31,7 +31,7 @@ function AboutPage() {
       {postList.map(({ node: { title, endpointId, body } }) => (
         <PostItem
           key={`${endpointId}`}
-          slug={`${endpointId}`}
+          slug={`/${endpointId}/`}
           title={title}
           description={body}
         />
