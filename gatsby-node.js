@@ -29,15 +29,24 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: `${slug}`,
     })
   }
+
+  // Ensures we are processing only rest posts
+  if (node.internal.type === "restApiPosts") {
+    createNodeField({
+      node,
+      name: "slugRest",
+      value: node.endpointId,
+    })
+  }
 }
 
 /**
  * Create post page
  */
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return graphql(`
-    {
+  await graphql(`
+    query {
       allMarkdownRemark {
         edges {
           node {
@@ -47,16 +56,36 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allRestApiPosts(limit: 5) {
+        edges {
+          node {
+            endpointId
+            title
+            body
+          }
+        }
+      }
     }
   `).then(result => {
-    const posts = result.data.allMarkdownRemark.edges
+    const post = result.data.allMarkdownRemark.edges
+    const postsRest = result.data.allRestApiPosts.edges
 
-    posts.forEach(({ node }) => {
+    post.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/Post.jsx`),
         context: {
           slug: node.fields.slug,
+        },
+      })
+    })
+
+    postsRest.forEach(({ node }) => {
+      createPage({
+        path: `${node.endpointId}`,
+        component: path.resolve(`./src/templates/PostRest.jsx`),
+        context: {
+          slugRest: node.endpointId,
         },
       })
     })
