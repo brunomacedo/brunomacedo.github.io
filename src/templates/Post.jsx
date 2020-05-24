@@ -21,10 +21,10 @@ function Post({ data }) {
 export const query = graphql`
   query Post($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
       frontmatter {
         title
       }
-      html
     }
   }
 `
